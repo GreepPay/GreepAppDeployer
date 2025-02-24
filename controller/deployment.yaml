@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greepapptemplate-controller
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: greepapptemplate-controller
+  template:
+    metadata:
+      labels:
+        app: greepapptemplate-controller
+    spec:
+      serviceAccountName: ceedcap-app-template
+      containers:
+        - name: greepapptemplate
+          image: drayfocus/apptemplate-controller:0.51
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: greep-app-template-config
