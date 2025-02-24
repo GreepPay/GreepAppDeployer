@@ -13,7 +13,7 @@ spec:
       labels:
         app: greepapptemplate-controller
     spec:
-      serviceAccountName: ceedcap-app-template
+      serviceAccountName: greep-app-template
       containers:
         - name: greepapptemplate
           image: drayfocus/apptemplate-controller:0.51
