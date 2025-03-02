@@ -16,7 +16,7 @@ spec:
       serviceAccountName: greep-app-template
       containers:
         - name: greepapptemplate
-          image: drayfocus/apptemplate-controller:0.52
+          image: drayfocus/apptemplate-controller:0.53
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
